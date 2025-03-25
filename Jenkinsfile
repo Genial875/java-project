@@ -5,13 +5,13 @@ pipeline {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "maven_3_8_7"
     }
-
+    stages{
         stage('BuildDockerImage') {
-            steps {
-                // add comment here
-                withDockerRegistry([credentialId: "dockerlogin", url:''])
-                    script{
-                        app = docker.build("tech365app")
+        steps {
+            // add comment here
+            withDockerRegistry([credentialId: "dockerlogin", url:''])
+            script{
+                app = docker.build("tech365app")
 
 
                     }
@@ -20,7 +20,7 @@ pipeline {
 
         stage('PushDockerImage') {
             steps {
-                //  add comment here
+            //  add comment here
             script{
 
 
@@ -34,4 +34,12 @@ pipeline {
             }
 
         }
+
+
+
+
+
+
+    }
+
 }
