@@ -6,31 +6,6 @@ pipeline {
         maven "maven_3_8_7"
     }
 
-    // stages {
-        // stage('CompileandRunSonarAnalysis') {
-            // steps {
-            //     // Sonar credentials on jenkins
-            //     withCredentials([string(credentialId:'sonar_token',variable:'sonar_token')])
-
-            //     // 
-            //     sh "mvn clean verify sonar:sonar -Dsonar.login=$tech563token -Dsonar.organization=tech563 -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectkey=tech563"
-
-                // To run Maven on a Windows agent, use
-                // bat "mvn -Dmaven.test.failure.ignore=true clean package"
-            // }
-
-//             post {
-//                 // If Maven was able to run the tests, even if some of the test
-//                 // failed, record the test results and archive the jar file.
-//                 success {
-//                     junit '**/target/surefire-reports/TEST-*.xml'
-//                     archiveArtifacts 'target/*.jar'
-        //         }
-        //     }
-        // }
-
-
-
         stage('BuildDockerImage') {
             steps {
                 // add comment here
@@ -59,3 +34,4 @@ pipeline {
             }
 
         }
+}
