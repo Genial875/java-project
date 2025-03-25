@@ -9,7 +9,7 @@ pipeline {
         stage('BuildDockerImage') {
             steps {
                 // add comment here
-                withDockerRegistry([credentialId: "dockerlogin", url:])
+                withDockerRegistry([credentialId: "dockerlogin", url:''])
                     script{
                         app = docker.build("tech365app")
 
