@@ -27,7 +27,7 @@ pipeline {
 
                 docker.withRegistry('https://393937407747.dkr.ecr.us-east-1.amazonaws.com', 'ecr:us-east-1:aws-credentials')
                 {
-                    app.push("lastestttt")
+                    app.push("latest")
 
 
                 }
